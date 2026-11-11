@@ -1,12 +1,16 @@
-<svg width="400" height="150" viewBox="0 0 400 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" height="200" viewBox="0 0 900 200" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" class="bg-start" />
       <stop offset="100%" class="bg-end" />
     </linearGradient>
+    <linearGradient id="repoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" class="card-start" />
+      <stop offset="100%" class="card-end" />
+    </linearGradient>
     <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#833E5B" />
-      <stop offset="100%" stop-color="#E87A90" />
+      <stop offset="50%" stop-color="#E87A90" />
     </linearGradient>
     <filter id="shadow" x="-5%" y="-10%" width="110%" height="130%">
       <feDropShadow dx="0" dy="3" stdDeviation="6" flood-opacity="0.25" />
@@ -14,18 +18,28 @@
   </defs>
 
   <style>
-    .card-border {
+    .outer-border {
+      stroke: #833E5B;
+      stroke-width: 2;
+    }
+    .inner-border {
       stroke: #833E5B;
       stroke-width: 1.5;
     }
+    .section-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
     .repo-name {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
     }
     .repo-desc {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       line-height: 1.4;
     }
     .meta-text {
@@ -35,9 +49,13 @@
     }
 
     /* Light mode */
-    .bg-start { stop-color: #FFFFFF; }
-    .bg-end { stop-color: #FDF0F3; }
-    .card-border { stroke-opacity: 0.35; }
+    .bg-start { stop-color: #FFF5F7; }
+    .bg-end { stop-color: #F8E5EB; }
+    .outer-border { stroke-opacity: 0.35; }
+    .inner-border { stroke-opacity: 0.35; }
+    .card-start { stop-color: #FFFFFF; }
+    .card-end { stop-color: #FDF0F3; }
+    .section-title { fill: #833E5B; }
     .repo-name { fill: #833E5B; }
     .repo-desc { fill: #5c434c; }
     .meta-text { fill: #833E5B; }
@@ -46,57 +64,66 @@
 
     /* Dark mode */
     @media (prefers-color-scheme: dark) {
-      .bg-start { stop-color: #170B13; }
-      .bg-end { stop-color: #260F1D; }
-      .card-border { stroke-opacity: 0.7; }
+      .bg-start { stop-color: #150A10; }
+      .bg-end { stop-color: #240E1B; }
+      .outer-border { stroke-opacity: 0.7; }
+      .inner-border { stroke-opacity: 0.6; }
+      .card-start { stop-color: #1F0D17; }
+      .card-end { stop-color: #2D1423; }
+      .section-title { fill: #E87A90; }
       .repo-name { fill: #FFA6BF; }
       .repo-desc { fill: #D9B8C4; }
       .meta-text { fill: #E87A90; }
-      .badge-bg { fill: #1F0D17; stroke: #833E5B; stroke-opacity: 0.6; }
+      .badge-bg { fill: #170B13; stroke: #833E5B; stroke-opacity: 0.6; }
       .icon-fill { fill: #E87A90; }
     }
   </style>
 
-  <!-- Card Frame -->
-  <rect x="6" y="6" width="388" height="138" rx="12" fill="url(#cardBg)" class="card-border" filter="url(#shadow)" />
+  <!-- Khung độc lập bo tròn hoàn chỉnh, đồng bộ hoàn toàn với Profile card -->
+  <rect x="8" y="8" width="884" height="184" rx="16" fill="url(#bgGrad)" class="outer-border" />
 
-  <!-- Top Accent Bar -->
-  <rect x="20" y="6" width="120" height="3" fill="url(#accent)" rx="1.5" />
+  <!-- Tiêu đề mục Feature Project -->
+  <text x="24" y="32" class="section-title">FEATURED PROJECT ✦</text>
 
-  <!-- Repo Icon (Book/Folder) -->
-  <g transform="translate(22, 24)" class="icon-fill">
+  <!-- Card Repo Crazy-Lobby -->
+  <rect x="20" y="44" width="860" height="136" rx="12" fill="url(#repoBg)" class="inner-border" filter="url(#shadow)" />
+  <rect x="36" y="44" width="160" height="3" fill="url(#accent)" rx="1.5" />
+
+  <!-- Repo Icon -->
+  <g transform="translate(40, 62)" class="icon-fill">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 000 1.5h2.5a2.25 2.25 0 002.25-2.25V.75A2.25 2.25 0 0013.25-1.5H4.5A4 4 0 00.5 2.5v10.75a.75.75 0 001.5 0V2.5z" />
   </g>
 
-  <!-- Repo Title -->
-  <text x="44" y="38" class="repo-name">Crazy-Lobby</text>
+  <!-- Repo Name -->
+  <text x="66" y="76" class="repo-name">Crazy-Lobby</text>
 
-  <!-- External link arrow icon -->
-  <g transform="translate(362, 24)" class="icon-fill" opacity="0.7">
+  <!-- External link arrow -->
+  <g transform="translate(845, 60)" class="icon-fill" opacity="0.8">
     <path d="M3 1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0V3.414L2.707 8.707a1 1 0 0 1-1.414-1.414L6.586 2H3a1 1 0 0 1 0-2z" />
   </g>
 
-  <!-- Description (2 lines) -->
-  <text x="22" y="66" class="repo-desc">Multiplayer party game inspired by chaotic</text>
-  <text x="22" y="84" class="repo-desc">obstacle-course gameplay with physics-based traps.</text>
+  <!-- Description -->
+  <text x="40" y="104" class="repo-desc">Multiplayer party game inspired by chaotic obstacle-course gameplay with physics-based traps.</text>
+  <text x="40" y="122" class="repo-desc">Features room matchmaking, real-time multiplayer synchronization &amp; character selection.</text>
 
-  <!-- Tags / Meta -->
-  <!-- Unity tag -->
-  <g transform="translate(22, 104)">
-    <rect width="60" height="22" rx="5" class="badge-bg" stroke-width="1" />
-    <text x="30" y="15" text-anchor="middle" class="meta-text">Unity</text>
+  <!-- Badges -->
+  <g transform="translate(40, 140)">
+    <rect width="64" height="24" rx="6" class="badge-bg" stroke-width="1" />
+    <text x="32" y="16" text-anchor="middle" class="meta-text">Unity</text>
   </g>
 
-  <!-- C# tag -->
-  <g transform="translate(88, 104)">
-    <rect width="42" height="22" rx="5" class="badge-bg" stroke-width="1" />
-    <circle cx="12" cy="11" r="5" fill="#239120" />
-    <text x="26" y="15" class="meta-text">C#</text>
+  <g transform="translate(112, 140)">
+    <rect width="48" height="24" rx="6" class="badge-bg" stroke-width="1" />
+    <text x="24" y="16" text-anchor="middle" class="meta-text">C#</text>
   </g>
 
-  <!-- PhotonFusion tag -->
-  <g transform="translate(136, 104)">
-    <rect width="92" height="22" rx="5" class="badge-bg" stroke-width="1" />
-    <text x="46" y="15" text-anchor="middle" class="meta-text">PhotonFusion</text>
+  <g transform="translate(168, 140)">
+    <rect width="105" height="24" rx="6" class="badge-bg" stroke-width="1" />
+    <text x="52" y="16" text-anchor="middle" class="meta-text">PhotonFusion</text>
+  </g>
+
+  <g transform="translate(281, 140)">
+    <rect width="135" height="24" rx="6" class="badge-bg" stroke-width="1" />
+    <text x="67" y="16" text-anchor="middle" class="meta-text">ASP.NET Core Web API</text>
   </g>
 </svg>
