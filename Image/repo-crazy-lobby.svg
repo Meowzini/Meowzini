@@ -1,0 +1,102 @@
+<svg width="400" height="150" viewBox="0 0 400 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" class="bg-start" />
+      <stop offset="100%" class="bg-end" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#833E5B" />
+      <stop offset="100%" stop-color="#E87A90" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <style>
+    .card-border {
+      stroke: #833E5B;
+      stroke-width: 1.5;
+    }
+    .repo-name {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .repo-desc {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .meta-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* Light mode */
+    .bg-start { stop-color: #FFFFFF; }
+    .bg-end { stop-color: #FDF0F3; }
+    .card-border { stroke-opacity: 0.35; }
+    .repo-name { fill: #833E5B; }
+    .repo-desc { fill: #5c434c; }
+    .meta-text { fill: #833E5B; }
+    .badge-bg { fill: #FFF5F7; stroke: #833E5B; stroke-opacity: 0.3; }
+    .icon-fill { fill: #833E5B; }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      .bg-start { stop-color: #170B13; }
+      .bg-end { stop-color: #260F1D; }
+      .card-border { stroke-opacity: 0.7; }
+      .repo-name { fill: #FFA6BF; }
+      .repo-desc { fill: #D9B8C4; }
+      .meta-text { fill: #E87A90; }
+      .badge-bg { fill: #1F0D17; stroke: #833E5B; stroke-opacity: 0.6; }
+      .icon-fill { fill: #E87A90; }
+    }
+  </style>
+
+  <!-- Card Frame -->
+  <rect x="6" y="6" width="388" height="138" rx="12" fill="url(#cardBg)" class="card-border" filter="url(#shadow)" />
+
+  <!-- Top Accent Bar -->
+  <rect x="20" y="6" width="120" height="3" fill="url(#accent)" rx="1.5" />
+
+  <!-- Repo Icon (Book/Folder) -->
+  <g transform="translate(22, 24)" class="icon-fill">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 000 1.5h2.5a2.25 2.25 0 002.25-2.25V.75A2.25 2.25 0 0013.25-1.5H4.5A4 4 0 00.5 2.5v10.75a.75.75 0 001.5 0V2.5z" />
+  </g>
+
+  <!-- Repo Title -->
+  <text x="44" y="38" class="repo-name">Crazy-Lobby</text>
+
+  <!-- External link arrow icon -->
+  <g transform="translate(362, 24)" class="icon-fill" opacity="0.7">
+    <path d="M3 1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0V3.414L2.707 8.707a1 1 0 0 1-1.414-1.414L6.586 2H3a1 1 0 0 1 0-2z" />
+  </g>
+
+  <!-- Description (2 lines) -->
+  <text x="22" y="66" class="repo-desc">Multiplayer party game inspired by chaotic</text>
+  <text x="22" y="84" class="repo-desc">obstacle-course gameplay with physics-based traps.</text>
+
+  <!-- Tags / Meta -->
+  <!-- Unity tag -->
+  <g transform="translate(22, 104)">
+    <rect width="60" height="22" rx="5" class="badge-bg" stroke-width="1" />
+    <text x="30" y="15" text-anchor="middle" class="meta-text">Unity</text>
+  </g>
+
+  <!-- C# tag -->
+  <g transform="translate(88, 104)">
+    <rect width="42" height="22" rx="5" class="badge-bg" stroke-width="1" />
+    <circle cx="12" cy="11" r="5" fill="#239120" />
+    <text x="26" y="15" class="meta-text">C#</text>
+  </g>
+
+  <!-- PhotonFusion tag -->
+  <g transform="translate(136, 104)">
+    <rect width="92" height="22" rx="5" class="badge-bg" stroke-width="1" />
+    <text x="46" y="15" text-anchor="middle" class="meta-text">PhotonFusion</text>
+  </g>
+</svg>
