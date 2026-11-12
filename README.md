@@ -1,7 +1,7 @@
 <div align="center">
-  <a href="https://github.com/D157D/Crazy-Lobby" target="_blank">
-    <img src="./Image/profile-card.svg" width="100%" alt="Khắc Duy Profile" />
-  </a>
+  <!-- <a href="https://github.com/D157D/Crazy-Lobby" target="_blank"> -->
+    <img src="./Image/profile-card.svg" width="100%" alt="Profile" />
+  <!-- </a> -->
 </div>
 
 <!-- <div align="center">
